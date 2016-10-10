@@ -54,4 +54,4 @@ It will use your development database, make sure you ran before executing the mi
 ## Why you made this?
 There's a [Cat API](http://catfacts-api.appspot.com) that returns cat facts. I like cats but I like dogs more. Equilibrium must exists.
 
-![dogcatlove](https://cloud.githubusercontent.com/assets/1270156/19244587/9d776a0e-8ee2-11e6-835c-b3894cd6080f.png)
+![dogcatlove](https://cloud.githubusercontent.com/assets/1270156/19246933/63523a6e-8eee-11e6-99c0-da53774db639.png)
