@@ -3,7 +3,7 @@
 # Dog API
 This is the Dog API and it provides dog facts as a service dogdog :dog:
 
-**Live endpoint:** `http://dog-api.kinduff.com`
+**Live endpoint:** `NOT AVAILABLE`
 
 | Path         | Description  | Parameters
 | ------------ | ------------ | ----------
