@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dog API by kinduff</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Dog API</h1>
+        <p>Dog API provides dog facts as a service.</p>
+
+        <p class="view"><a href="https://github.com/kinduff/dog-api">View the Project on GitHub <small>kinduff/dog-api</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kinduff/dog-api/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kinduff/dog-api/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kinduff/dog-api">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="https://cloud.githubusercontent.com/assets/1270156/19244552/67e751ba-8ee2-11e6-9b6e-3a6e1b307db4.png" alt="dogdog"></p>
+
+<h1>
+<a id="dog-api" class="anchor" href="#dog-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dog API</h1>
+
+<p>This is the Dog API and it provides dog facts as a service dogdog <g-emoji alias="dog" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f436.png" ios-version="6.0">🐶</g-emoji></p>
+
+<p><strong>Live endpoint:</strong> <code>http://dog-api.kinduff.com</code></p>
+
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Description</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/facts</code></td>
+<td>Returns an object with dog facts</td>
+<td><code>?number=5</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="host-it-yourself" class="anchor" href="#host-it-yourself" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Host it yourself</h2>
+
+<p>First make sure you have the following dependencies installed.</p>
+
+<ul>
+<li>Ruby greater than 2.3.0</li>
+<li>SQLite3</li>
+</ul>
+
+<p>Go ahead and clone this repository and install the dependencies.</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>After that you'll need to setup your database, run the following command to run migrations.</p>
+
+<pre><code>rake db:migrate
+</code></pre>
+
+<p>And finally, fill out your database with the latest dog facts included in the <code>db/seeds.rb</code> file.</p>
+
+<pre><code>rake db:seed
+</code></pre>
+
+<p>Run the application by running the following command.</p>
+
+<pre><code>rake server
+</code></pre>
+
+<p>Or just <code>rake</code> by it self. The application should now be running in <code>http://localhost:4567</code>.</p>
+
+<h2>
+<a id="why-you-made-this" class="anchor" href="#why-you-made-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why you made this?</h2>
+
+<p>There's a <a href="http://catfacts-api.appspot.com">Cat API</a> that returns cat facts. I like cats but I like dogs more. Equilibrium must exists.</p>
+
+<h2>
+<a id="sources" class="anchor" href="#sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sources</h2>
+
+<p>Lot's of places, I'll list them tomorrow, mom.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kinduff">kinduff</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
