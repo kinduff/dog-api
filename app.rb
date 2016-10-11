@@ -17,6 +17,10 @@ require './models/fact'
 #
 # Routes/Controllers
 #
+get '/' do
+  redirect to('http://kinduff.com/dog-api')
+end
+
 get '/api/facts' do
   content_type 'application/json', 'charset' => 'utf-8'
 
