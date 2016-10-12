@@ -41,7 +41,7 @@ end
 post '/api/facts/slack' do
   content_type 'application/json', 'charset' => 'utf-8'
   random_fact = Fact.get_random().first()
-  message = "Fact ##{random_fact.id}: #{random_fact.body}"
+  message = "*Dog Fact ##{random_fact.id}*: #{random_fact.body}\n:dog: :dog: :dog:"
   { response_type: "in_channel", text: message }.to_json
 end
 
