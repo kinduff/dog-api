@@ -38,6 +38,13 @@ get '/api/facts' do
   { facts: facts, success: success_response }.to_json
 end
 
+post '/api/facts/slack' do
+  content_type 'application/json', 'charset' => 'utf-8'
+  random_fact = Fact.get_random().first()
+  message = "Fact ##{random_fact.id}: #{random_fact.body}"
+  { response_type: "in_channel", text: message }.to_json
+end
+
 #
 # Error handling
 #
