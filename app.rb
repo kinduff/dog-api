@@ -44,6 +44,7 @@ end
 
 post '/api/facts/slack' do
   content_type 'application/json', 'charset' => 'utf-8'
+
   random_fact = Fact.get_random().first()
   message = "*Dog Fact ##{random_fact.id}*: #{random_fact.body}\n:dog: :dog: :dog:"
   { response_type: "in_channel", text: message }.to_json
@@ -68,19 +69,26 @@ get '/api/facts/slack' do
 
   # Webhook response
   webhook_url = resp["incoming_webhook"]["url"]
-  options = {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: {
-      text: "Welcome to Dog Facts!\n" +
-      "You will now receive fun semi-irregular facts about DOGS! :dog: :tada:\n" +
-      "You can also get a random fact by sending `/dogfact` from any channel."
-    }.to_json
-  }
-  resp = HTTParty.post(webhook_url, options)
-  if resp.success?
-    redirect ENV['SUCCESS_URL']
+
+  hook = Hook.new({ url: webhook_url })
+
+  if hook.save
+    options = {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {
+        text: "Welcome to Dog Facts!\n" +
+        "You will now receive fun semi-irregular facts about DOGS! :dog: :tada:\n" +
+        "You can also get a random fact by sending `/dogfact` from any channel."
+      }.to_json
+    }
+    resp = HTTParty.post(hook.url, options)
+    if resp.success?
+      redirect ENV['SUCCESS_URL']
+    else
+      redirect ENV['ERROR_URL']
+    end
   else
     redirect ENV['ERROR_URL']
   end
