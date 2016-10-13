@@ -15,9 +15,12 @@ GEM
     arel (7.1.2)
     concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (2.0.2)
     minitest (5.9.1)
+    multi_xml (0.5.5)
     pg (0.19.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -56,6 +59,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  httparty
   json
   pg
   rack-test

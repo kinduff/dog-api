@@ -5,6 +5,8 @@ gem 'json'
 gem 'sinatra'
 gem 'activerecord'
 gem 'sinatra-activerecord'
+gem 'httparty'
+gem 'dotenv'
 
 group :development, :test do
  gem 'sqlite3'
