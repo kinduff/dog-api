@@ -6,4 +6,8 @@ class Fact < ActiveRecord::Base
 
     order('RANDOM()').limit(number)
   end
+
+  def message
+    "*Dog Fact ##{self.id}*: #{self.body}\n:dog: :dog: :dog:"
+  end
 end

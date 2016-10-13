@@ -13,8 +13,10 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.2)
+    chronic (0.10.2)
     concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
+    dotenv (2.1.1)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
@@ -53,12 +55,15 @@ GEM
     tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    whenever (0.9.7)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activerecord
+  dotenv
   httparty
   json
   pg
@@ -68,6 +73,7 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
   sqlite3
+  whenever
 
 BUNDLED WITH
    1.11.2

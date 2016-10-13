@@ -9,7 +9,9 @@ require 'sinatra/activerecord'
 require './config/application'
 require './config/environments'
 
+require './models/dog'
 require './models/fact'
+require './models/hook'
 
 #  ____                   _    ____ ___
 # |  _ \  ___   __ _     / \  |  _ \_ _|
@@ -22,7 +24,7 @@ require './models/fact'
 # Routes/Controllers
 #
 get '/' do
-  redirect to('http://kinduff.com/dog-api')
+  redirect to(ENV['HOME_URL'])
 end
 
 get '/api/facts' do
@@ -43,44 +45,31 @@ get '/api/facts' do
 end
 
 post '/api/facts/slack' do
+  random_fact = Fact.get_random().first().message
+
   content_type 'application/json', 'charset' => 'utf-8'
-  random_fact = Fact.get_random().first()
-  message = "*Dog Fact ##{random_fact.id}*: #{random_fact.body}\n:dog: :dog: :dog:"
-  { response_type: "in_channel", text: message }.to_json
+  { response_type: "in_channel", text: random_fact }.to_json
 end
 
 get '/api/facts/slack' do
-  redirect ENV['ERROR_URL'] if params['error'] == 'access_denied'
+  redirect ENV['ERROR_URL'] if params['error'] == 'access_denied' || params[:code].nil?
 
-  # User authorization
-  options = {
-    body: {
-      client_id: ENV['CLIENT_ID'],
-      client_secret: ENV['CLIENT_SECRET'],
-      code: params[:code],
-      redirect_uri: ENV['REDIRECT_URI']
-    }
-  }
-  resp = HTTParty.post('https://slack.com/api/oauth.access', options)
-  unless resp.success?
-    redirect ENV['ERROR_URL']
-  end
+  authorization = Dog.sniff(params[:code])
 
-  # Webhook response
-  webhook_url = resp["incoming_webhook"]["url"]
-  options = {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: {
-      text: "Welcome to Dog Facts!\n" +
-      "You will now receive fun semi-irregular facts about DOGS! :dog: :tada:\n" +
-      "You can also get a random fact by sending `/dogfact` from any channel."
-    }.to_json
-  }
-  resp = HTTParty.post(webhook_url, options)
-  if resp.success?
-    redirect ENV['SUCCESS_URL']
+  redirect ENV['ERROR_URL'] unless authorization.success?
+
+  webhook_url = authorization["incoming_webhook"]["url"]
+  hook = Hook.new({ url: webhook_url })
+
+  if hook.save
+    welcome_msg = Dog.welcome_message
+    send_webhook = Dog.bark_to(hook.url, welcome_msg)
+
+    if send_webhook.success?
+      redirect ENV['SUCCESS_URL']
+    else
+      redirect ENV['ERROR_URL']
+    end
   else
     redirect ENV['ERROR_URL']
   end

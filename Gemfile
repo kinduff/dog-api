@@ -7,6 +7,7 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'httparty'
 gem 'dotenv'
+gem 'whenever', :require => false
 
 group :development, :test do
  gem 'sqlite3'
