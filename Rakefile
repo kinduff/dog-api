@@ -12,3 +12,9 @@ desc "Run the application"
 task :server do
   Sinatra::Application.run!
 end
+
+task :bark do
+  all_hooks = Hook.all.map{|h| h.url }
+  message = Fact.get_random.first.message
+  Dog.bark_to(all_hooks, message)
+end
