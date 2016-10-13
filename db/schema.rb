@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002191203) do
+ActiveRecord::Schema.define(version: 20161013011748) do
 
   create_table "facts", force: :cascade do |t|
     t.text "body"
+  end
+
+  create_table "hooks", force: :cascade do |t|
+    t.text "url"
   end
 
 end
