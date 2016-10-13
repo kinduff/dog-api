@@ -3,6 +3,13 @@
 # Dog API
 This is the Dog API and it provides dog facts as a service dogdog :dog:
 
+## Add to Slack
+<a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands&client_id=2160638498.90708647394"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+
+This will enable two things: a daily random fact posted in the channel you select and a slash command `/dogfact` to retrieve a single fact.
+
+## Use it as an API
+
 **Live endpoint:** `http://dog-api.kinduff.com`
 
 | Path         | Description  | Parameters
