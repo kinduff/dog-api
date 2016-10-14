@@ -64,3 +64,8 @@ There's a [Cat API](http://catfacts-api.appspot.com) that returns cat facts. I l
 
 ## Sources
 Lot's of places, I'll list them tomorrow, mom.
+
+## Dog Facts Privacy Policy
+Dog Facts is just for fun. The only data retained by Dog Facts is your team webhook url (which is required to post Dog Facts messages to your Slack). Otherwise, no data is kept.
+
+For questions or support, please email `el@kinduff.com` or contact directly through Twitter `http://twitter.com/kinduff`
