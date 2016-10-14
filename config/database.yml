@@ -1,0 +1,16 @@
+development:
+  adapter: sqlite3
+  encoding: utf8
+  database: dog-api_development.db
+  pool: 5
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: dog-api_production
+  pool: 5
+  username: kinduff
+  password:
+  host: localhost
