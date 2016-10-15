@@ -1,4 +1,4 @@
-![dogdog](https://cloud.githubusercontent.com/assets/1270156/19244552/67e751ba-8ee2-11e6-9b6e-3a6e1b307db4.png)
+![dogdog](https://cloud.githubusercontent.com/assets/1270156/19406321/56122900-9249-11e6-8158-6987c82cbbdf.jpg)
 
 # Dog API
 This is the Dog API and it provides dog facts as a service dogdog :dog:
