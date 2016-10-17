@@ -283,6 +283,35 @@ footer {
   }
 }
 
+.alert {
+  width: 100%;
+  border: 1px solid;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  display: none;
+  border-radius: 5px;
+}
+
+.alert.sucess {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6
+}
+
+.alert.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alert p:first-child {
+  margin: 0 0 10px 0;
+}
+
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
