@@ -111,7 +111,7 @@ facts = [
   %(It’s not a fever... A dog’s normal temperature is between 101 and 102.5 degrees Fahrenheit. How much do you know about dog health? Take our Doggy First Aid Quiz!),
   %(Is something wet? Unlike humans who sweat everywhere, dogs only sweat through the pads of their feet.),
   %(Here’s looking at you. Dogs have three eyelids, an upper lid, a lower lid and the third lid, called a nictitating membrane or "haw," which helps keep the eye moist and protected.),
-  %(Americans love dogs! 62% of U.S. households own a pet, which equates to 72.9 million homes),
+  %(Americans love dogs! 44% of U.S. households have a dog, which equates to 55.3 million homes),
   %(Move over Rover! 45% of dogs sleep in their owner’s bed (we’re pretty sure a large percentage also hog the blankets!)),
   %(Why are dogs’ noses so wet? Dogs’ noses secrete a thin layer of mucous that helps them absorb scent. They then lick their noses to sample the scent through their mouth.),
   %(Yummy! Dogs have about 1,700 taste buds. Humans have approximately 9,000 and cats have around 473.),
