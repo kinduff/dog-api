@@ -1,6 +1,12 @@
 require File.expand_path '../spec_helper.rb', __FILE__
 
 describe 'Dog Facts' do
+  before do
+    5.times do |i|
+      Fact.create(body: "Fact #{i}")
+    end
+  end
+
   it 'should return a json object as response' do
     get '/api/facts'
     headers = last_response.header['Content-Type']
