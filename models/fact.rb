@@ -4,7 +4,7 @@ class Fact < ActiveRecord::Base
     number = 1 if number == 0
     number = 100 if number > 100
 
-    order('RANDOM()').limit(number)
+   order(Arel.sql('random()')).limit(number)
   end
 
   def message
