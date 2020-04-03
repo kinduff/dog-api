@@ -16,7 +16,7 @@ If installation was successful you'll receive a welcome message :)
 ### Privacy Policy
 Dog Facts is just for fun. The only data retained by Dog Facts is your team webhook url (which is required to post Dog Facts messages to your Slack). Otherwise, no data is kept.
 
-For questions or support, please email `el@kinduff.com` or contact directly through Twitter `http://twitter.com/kinduff`
+For questions or support, please contact directly through Twitter `https://twitter.com/kinduff` or chat with me at `https://keybase.io/kinduff/chat`
 
 ## Use it as an API
 
@@ -44,19 +44,13 @@ Then install the dependencies.
 bundle install
 ```
 
-After that you'll need to setup your database, run the following command to run migrations. 
+After that you'll need to setup your database, run the following command to run migrations and fill out your database with the latest dog facts included in the `db/seeds.rb` file.
 
 ```
-rake db:migrate
+rake db:setup
 ```
 
-And finally, fill out your database with the latest dog facts included in the `db/seeds.rb` file.
-
-```
-rake db:seed
-```
-
-Run the application by running the following command.
+And finally, start the server by running the following command.
 
 ```
 rake server
@@ -64,8 +58,14 @@ rake server
 
 Or just `rake` by it self. The application should now be running in `http://localhost:4567`.
 
+In order to run the tests, just run:
+
+```
+rake spec
+```
+
 ## Why you made this?
 There's a [Cat API](http://catfacts-api.appspot.com) that returns cat facts. I like cats but I like dogs more. Equilibrium must exists.
 
 ## Sources
-Lot's of places, I'll list them tomorrow, mom.
+Lot's of places, I'll list them tomorrow, mom. Also, special thanks to @screenshotjy and @RoryDuncan for their contributions.
