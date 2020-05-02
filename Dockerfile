@@ -1,4 +1,4 @@
-FROM ruby:2.3.0
+FROM ruby:2.7.1
 
 ENV APP_ENV production
 ENV RACK_ENV production
