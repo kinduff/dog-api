@@ -28,6 +28,7 @@ GEM
     multi_xml (0.6.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    pg (1.2.3)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
@@ -69,6 +70,7 @@ DEPENDENCIES
   dotenv
   httparty
   json
+  pg
   rack-test
   rspec
   sinatra
