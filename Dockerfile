@@ -20,4 +20,4 @@ ADD . /app
 
 EXPOSE 4567
 
-CMD ["rackup"]
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
