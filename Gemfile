@@ -6,11 +6,11 @@ gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'httparty'
 gem 'dotenv'
-gem 'sqlite3'
 
 group :development, :test do
- gem 'rspec'
- gem 'rack-test'
+  gem 'sqlite3'
+  gem 'rspec'
+  gem 'rack-test'
 end
 
 group :production do

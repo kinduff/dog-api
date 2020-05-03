@@ -1,24 +1,19 @@
-development:
+default: &default
   adapter: sqlite3
-  encoding: utf8
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
   database: dog-api_development.db
-  pool: 5
-  username:
-  password:
 
 test:
-  adapter: sqlite3
-  encoding: utf8
+  <<: *default
   database: dog-api_test.db
-  pool: 5
-  username:
-  password:
 
 production:
+  <<: *default
   adapter: postgresql
-  encoding: utf8
-  database: <%= ENV['DB_NAME'] %>
-  pool: 5
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] %>
+  database: dog-api_production
+  username: postgres
+  password:

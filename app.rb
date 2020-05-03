@@ -24,7 +24,7 @@ require './models/hook'
 # Routes/Controllers
 #
 get '/' do
-  redirect to(ENV['HOME_URL'])
+  redirect ENV['HOME_URL']
 end
 
 get '/api/facts' do

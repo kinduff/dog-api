@@ -7,10 +7,17 @@ WORKDIR /app
 
 ADD Gemfile /app/Gemfile
 ADD Gemfile.lock /app/Gemfile.lock
-RUN bundle install --system
+
+ENV LANG=C.UTF-8 \
+    BUNDLE_JOBS=4 \
+    BUNDLE_RETRY=3
+
+ENV BUNDLER_WITHOUT development test
+
+RUN bundle install
 
 ADD . /app
 
 EXPOSE 4567
 
-CMD ["rake", "server"]
+CMD ["rackup"]
