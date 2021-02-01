@@ -29,7 +29,7 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     pg (1.2.3)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
