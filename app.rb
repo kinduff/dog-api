@@ -41,6 +41,10 @@ get '/api/facts' do
     success_response = false
   end
 
+  if params[:raw]
+    return facts
+  end
+
   { facts: facts, success: success_response }.to_json
 end
 
