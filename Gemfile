@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'httparty'
 gem 'dotenv'
+gem 'rake'
 
 group :development, :test do
   gem 'sqlite3'
