@@ -25,6 +25,7 @@ For questions or support, please contact directly through Twitter `https://twitt
 | Path         | Description  | Parameters
 | ------------ | ------------ | ----------
 | `/api/facts` | Returns an object with dog facts | `?number=5`
+| `/api/facts?raw=true` | Returns one fact in plain text 
 
 ## Host it yourself
 First make sure you have the following dependencies installed.

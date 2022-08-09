@@ -28,18 +28,23 @@ get '/' do
 end
 
 get '/api/facts' do
+  is_raw = params[:raw] == 'true'
   content_type 'application/json', 'charset' => 'utf-8'
+  content_type 'text/plain', 'charset' => 'utf-8' if is_raw
 
   facts = []
   success_response = false
+  count = is_raw ? 1 : params[:number]
 
   begin
-    random_facts = Fact.get_random(params[:number])
+    random_facts = Fact.get_random(count)
     facts = random_facts.map{|f| f.body }
     success_response = true
   rescue Exception => e
     success_response = false
   end
+
+  return facts if is_raw
 
   { facts: facts, success: success_response }.to_json
 end
