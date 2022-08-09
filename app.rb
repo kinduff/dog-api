@@ -29,6 +29,7 @@ end
 
 get '/api/facts' do
   content_type 'application/json', 'charset' => 'utf-8'
+  content_type 'text/plain', 'charset' => 'utf-8' if params[:raw] == 'true'
 
   facts = []
   success_response = false
@@ -41,9 +42,7 @@ get '/api/facts' do
     success_response = false
   end
 
-  if params[:raw]
-    return facts
-  end
+  return facts if params[:raw] == 'true'
 
   { facts: facts, success: success_response }.to_json
 end
