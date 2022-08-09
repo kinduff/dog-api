@@ -33,9 +33,10 @@ get '/api/facts' do
 
   facts = []
   success_response = false
+  count = params[:raw] ? 1 : params[:number]
 
   begin
-    random_facts = Fact.get_random(params[:number])
+    random_facts = Fact.get_random(count)
     facts = random_facts.map{|f| f.body }
     success_response = true
   rescue Exception => e
