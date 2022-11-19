@@ -20,6 +20,11 @@ require './models/hook'
 # |____/ \___/ \__, | /_/   \_\_|  |___|
 #              |___/
 
+before do
+  content_type :json
+  headers 'Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Methods' => ['OPTIONS', 'GET']
+end
+
 #
 # Routes/Controllers
 #

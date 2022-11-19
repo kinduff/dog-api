@@ -67,16 +67,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dotenv
-  httparty
-  json
-  pg
-  rack-test
-  rake
-  rspec
-  sinatra
-  sinatra-activerecord
-  sqlite3
+  dotenv (~> 2.7)
+  httparty (~> 0.18)
+  json (~> 2.3)
+  pg (~> 1.2)
+  rack-test (~> 1.1)
+  rake (~> 13.0)
+  rspec (~> 3.9)
+  sinatra (~> 2.2)
+  sinatra-activerecord (~> 2.0)
+  sqlite3 (~> 1.4)
 
 RUBY VERSION
    ruby 2.6.6p146
