@@ -1,3 +1,6 @@
+# :no_entry: [DEPRECATED] Active at [kinduff/dogapi.dog](https://github.com/kinduff/dogapi.dog)
+
+
 ![dogdog](https://cloud.githubusercontent.com/assets/1270156/19406321/56122900-9249-11e6-8158-6987c82cbbdf.jpg)
 
 # Dog API
